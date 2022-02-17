@@ -3,7 +3,7 @@ https://www.ncbi.nlm.nih.gov/nuccore/NC_045512
 Remove line numbers from SARS-CoV-2 genome
 """
 
-SEQ = """
+seq = """
         1 attaaaggtt tataccttcc caggtaacaa accaaccaac tttcgatctc ttgtagatct
        61 gttctctaaa cgaactttaa aatctgtgtg gctgtcactc ggctgcatgc ttagtgcact
       121 cacgcagtat aattaataac taattactgt cgttgacagg acacgagtaa ctcgtctatc
@@ -505,6 +505,6 @@ SEQ = """
     29881 aaaaaaaaaa aaaaaaaaaa aaa"""
 
 for s in " \n" + ''.join(str(i) for i in range(10)):
-    SEQ=SEQ.replace(s, '')
+    seq = seq.replace(s, '')
 with open('NC_045512.txt', 'w') as f:
-    f.write(SEQ)
+    f.write(seq)
