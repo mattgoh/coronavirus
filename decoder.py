@@ -78,9 +78,9 @@ def complement(sequence: str) -> str:
             complement+='c'
     return complement
 
-def decode(sequence: str) -> list:
+def decode(sequence: str, frameshift: int=0) -> list:
     nseq = len(sequence)
     amino_acids = []
-    for i in range(0, nseq-2, 3):
+    for i in range(0+frameshift, nseq-2-frameshift, 3):
         amino_acids.append(CODON[sequence[i:i+3]])
     return amino_acids
